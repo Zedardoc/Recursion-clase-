@@ -13,6 +13,34 @@ public class Recursion {
     /**
      * @param args the command line arguments
      */
+    static int FibonacciTonto(int x){
+        if(x == 1){
+            return 0;
+        }
+        if (x == 2){
+            return 1;
+        }
+        
+        return FibonacciTonto(x-1)+FibonacciTonto(x-2);
+    }
+    
+    static int Fibonacci(int x){
+        if (x == 0 || x == 1){
+            return x;
+        }
+        
+        int i = 0;
+        int j = 1;
+        int k = 0;
+        for(int z= 1; z<x; z++){
+            System.out.println("bucle");
+            k = i+j;
+            i = j;
+            j = k;
+            
+        }
+        return k;
+    }
     
     static int Factorial(int x){
         if (x <=1){
@@ -68,8 +96,21 @@ public class Recursion {
         System.out.println("Queremos bajar "+ escaleras + " escaleras de forma tonta");
         if(BajarEscalerasComoTonto(5)==1){System.out.println("Exito");}
         
+        
+        //
+        System.out.println("----------------------------------");
+        //
         System.out.println(Factorial(5));
         System.out.println(FactorialTonto(5));
+        
+        //
+        System.out.println("----------------------------------");
+        //
+        
+        System.out.println(Fibonacci(500));
+        System.out.println(FibonacciTonto(500));
+        
+        
     }
     
 }
