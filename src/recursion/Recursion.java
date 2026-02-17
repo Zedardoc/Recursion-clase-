@@ -13,6 +13,23 @@ public class Recursion {
     /**
      * @param args the command line arguments
      */
+    
+    static int Factorial(int x){
+        if (x <=1){
+            return 1;
+        }
+        return x*Factorial(x-1);
+    }
+    
+    static int FactorialTonto(int x){
+        int i = x;
+        int result = 1;
+        while(i != 0){
+        result*=i;
+        i--;
+        }
+        return result;
+    }
     static int BajarEscaleras(int x_escaleras){
         
         if(x_escaleras == 0){
@@ -50,6 +67,9 @@ public class Recursion {
   
         System.out.println("Queremos bajar "+ escaleras + " escaleras de forma tonta");
         if(BajarEscalerasComoTonto(5)==1){System.out.println("Exito");}
+        
+        System.out.println(Factorial(5));
+        System.out.println(FactorialTonto(5));
     }
     
 }
